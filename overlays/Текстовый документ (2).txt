@@ -1,0 +1,2 @@
+modprobe fbtft_device custom name=fb_st7789v busnum=1 cs=1 gpios=reset:73,dc:70,led:69 rotate=90 speed=65000000 bgr=-1 txbuflen=65536
+fbi -vt 1 -noverbose -d /dev/fb1 /boot/boot.bmp

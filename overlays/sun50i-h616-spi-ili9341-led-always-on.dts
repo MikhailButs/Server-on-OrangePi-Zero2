@@ -1,0 +1,40 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "allwinner,sun4i-a10", "allwinner,sun7i-a20", "allwinner,sun8i-h3", "allwinner,sun50i-a64", "allwinner,sun50i-h5", "allwinner,sun50i-h616";
+
+	fragment@0 {
+   		target = <&pio>;
+    		__overlay__ {
+      			ili9341_pins: ili9341_pins {
+        		pins = "PС7", "PC10"; /*RESET, DC_RS*/
+        		function = "gpio_out", "gpio_out" ;
+      			};
+    		};
+  	};
+
+	fragment@1 {
+		target = <&spi1>;
+		__overlay__ {
+			status = "okay";
+			cs-gpios = <&pio 7 9 0>; /* PH9 */
+
+			ili9341: ili9341@0 {
+        			compatible = "ilitek,ili9341";
+        			reg = <0>;
+        			pinctrl-names = "default";
+        			pinctrl-0 = <&ili9341_pins>;
+        			spi-max-frequency = <16000000>;
+        			rotate = <90>;
+        			bgr;
+        			fps = <25>;
+        			buswidth = <8>;
+        			reset-gpios = <&pio 2 7 1>; /*RESET=PC7*/
+        			dc-gpios = <&pio 2 10 0>; /*DC_RS=PC10*/
+        			/*led-gpios = <&pio 2 4 0>; LED=PC4*/
+        			debug = <0>;
+      			};
+		};
+	};
+};

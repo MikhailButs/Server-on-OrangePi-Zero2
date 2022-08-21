@@ -1,0 +1,18 @@
+/dts-v1/;
+/plugin/;
+/
+{
+ compatible = "allwinner,h616", "arm,sun50iw9p1";
+ fragment@1
+ {target = <&twi3>;
+ __overlay__
+ { #address-cells = <1>;
+ #size-cells = <0>;
+ ds1307@68
+ { compatible = "dallas,ds1307";
+ reg = <0x68>;
+ status = "okay";
+ };
+ };
+ };
+};
