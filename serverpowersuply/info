@@ -1,0 +1,667 @@
+{
+  "uuid": "070c4c6c3e40ddbd92a8c2ffe3d0bfae",
+  "path": "Offline/serverpowersuply",
+  "name": "serverpowersuply",
+  "content": "контроллер питания серверной платы orange pi zero 2",
+  "created_at": "2022-03-16 12:37:23",
+  "updated_at": "2022-03-20 15:18:26",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "5bfcc46f2160e246ee4cc7f78ccc2fe2",
+      "title": "powerlayout",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "404aa9221ff94de597b8734806e7c74f": 6,
+        "7526c7323d3927fc0329972328edfeb0": 1,
+        "e8227dd34355fb317f612b5079bf676c": 1,
+        "3e5f9305e4ff42e585f4a630aaa490d5": 1,
+        "76184ac4def8bd1c11bdb284729b3240": 2,
+        "7cf0742ede124deabc1a17d9cb305ad1": 1,
+        "cb156ac9ee5546299534d4ab38132622": 1,
+        "fa5a43f7921d4de096cb24262ae6b0f5": 1,
+        "d1967012734640e5b2f2cc1ea764740b": 2
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "10nF",
+          1,
+          "CAP-TH_L4.2-W3.8-P5.08-D0.6",
+          "C1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ReliaPro",
+            "BOM_Manufacturer Part": "CT4-0805Y103 M500",
+            "BOM_Supplier Part": "C3766",
+            "puuid": "516c8d718eb141208015ddba8bba510e",
+            "uuid": "7526c7323d3927fc0329972328edfeb0"
+          }
+        ],
+        [
+          "100uF",
+          2,
+          "CAP-TH_BD6.3-P2.50-D1.0-FD",
+          "C2,C3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ValuePro",
+            "BOM_Manufacturer Part": "100uF 25V 6.3*7",
+            "BOM_Supplier Part": "C44587",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "1a9b494b74c34d3b879eb7f824b3824d",
+            "uuid": "76184ac4def8bd1c11bdb284729b3240"
+          }
+        ],
+        [
+          "1N5921BG",
+          1,
+          "DO-41_BD2.4-L4.7-P8.70-D0.9-RD",
+          "D1_5V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C232466",
+            "BOM_Manufacturer": "ON Semicon",
+            "BOM_Manufacturer Part": "1N5921BG",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c2803222ad4b48fb94db0de548a6280a",
+            "uuid": "7cf0742ede124deabc1a17d9cb305ad1"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x1",
+          6,
+          "HDR-M-2.54_1X1",
+          "J1_RESET,J2_GND,J3_5V,J4_OFFCONTROL_SCK,J5_OFFSIGNAL_MISO,J6_OFFBTN_MOSI",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "button6*6*8.5",
+          1,
+          "KEY-TH_4P-L6.0-W6.0-P4.50",
+          "KEY1",
+          {
+            "BOM_Supplier Part": "C59980",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ReliaPro",
+            "BOM_Manufacturer Part": "button6*6*8.5",
+            "puuid": "9096c4e6bc254754b0b895e85df2faca",
+            "uuid": "e8227dd34355fb317f612b5079bf676c"
+          }
+        ],
+        [
+          "6k",
+          1,
+          "R_AXIAL-0.4",
+          "R1",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "5905db98cde4487fbb177070aa85bbe1",
+            "uuid": "d1967012734640e5b2f2cc1ea764740b"
+          }
+        ],
+        [
+          "2k",
+          1,
+          "R_AXIAL-0.4",
+          "R2",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "5905db98cde4487fbb177070aa85bbe1",
+            "uuid": "d1967012734640e5b2f2cc1ea764740b"
+          }
+        ],
+        [
+          "ATTINY13-20PU",
+          1,
+          "DIP-8_L9.2-W6.4-P2.54-LS8.7-BL",
+          "U1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "MICROCHIP",
+            "BOM_Manufacturer Part": "ATTINY13-20PU",
+            "BOM_Supplier Part": "C145757",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "f06687f6b6924b4bb859660f62897498",
+            "uuid": "fa5a43f7921d4de096cb24262ae6b0f5"
+          }
+        ],
+        [
+          "one_reley_module",
+          1,
+          "ONE_RELEY_MODULE",
+          "U2",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "8a758e74336f4df6a139a7624d16b975",
+            "uuid": "cb156ac9ee5546299534d4ab38132622"
+          }
+        ],
+        [
+          "7805(TO-220)",
+          1,
+          "TO-220-3_L10.0-W4.5-P2.54-L",
+          "U3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "STMicroelectronics",
+            "BOM_Manufacturer Part": "L7805CV-DG",
+            "BOM_Supplier Part": "C3795",
+            "puuid": "948e610cffd14df79f04c73832b1409b",
+            "uuid": "3e5f9305e4ff42e585f4a630aaa490d5"
+          }
+        ],
+        [
+          "ATTINY2313V-10PU",
+          1,
+          "PDIP-20_L25.9-W6.6-P2.54-LS7.9-BL",
+          "U5",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C613485",
+            "BOM_Manufacturer": "MICROCHIP(美国微芯)",
+            "BOM_Manufacturer Part": "ATTINY2313V-10PU",
+            "puuid": "dbf8bf2c4285421f9f2eb915163d57a0",
+            "uuid": "2e426d3b71d34dfa96f78b5870d07ac9"
+          }
+        ]
+      ],
+      "updateTime": 1647775148,
+      "createTime": 1647427836,
+      "histories": [],
+      "created_at": "2022-03-16 13:50:36",
+      "updated_at": "2022-03-20 14:19:08"
+    },
+    {
+      "uuid": "9b03b482d88dd465a61fec465817b4c8",
+      "title": "power2",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "2e426d3b71d34dfa96f78b5870d07ac9": 1,
+        "cb156ac9ee5546299534d4ab38132622": 1,
+        "e8227dd34355fb317f612b5079bf676c": 1,
+        "7526c7323d3927fc0329972328edfeb0": 1,
+        "a68dc5e6a9944c46b7604648a43dcd65": 2,
+        "a9aa2b14f188405792fa87ac344499a4": 2,
+        "8cb0931e7aee4571ab281a4f2e7b6e80": 1,
+        "404aa9221ff94de597b8734806e7c74f": 6,
+        "3ec77201bbcd4ecd8722658d581a4e60": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "10nF",
+          1,
+          "CAP-TH_L4.2-W3.8-P5.08-D0.6",
+          "C1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ReliaPro",
+            "BOM_Manufacturer Part": "CT4-0805Y103 M500",
+            "BOM_Supplier Part": "C3766",
+            "puuid": "516c8d718eb141208015ddba8bba510e",
+            "uuid": "7526c7323d3927fc0329972328edfeb0"
+          }
+        ],
+        [
+          "100uF",
+          2,
+          "CAP-TH_BD6.3-P2.50-D1.0-FD",
+          "C2,C3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ValuePro",
+            "BOM_Manufacturer Part": "100uF 25V 6.3*7",
+            "BOM_Supplier Part": "C44587",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "1a9b494b74c34d3b879eb7f824b3824d",
+            "uuid": "76184ac4def8bd1c11bdb284729b3240"
+          }
+        ],
+        [
+          "1N5921BG",
+          1,
+          "DO-41_BD2.4-L4.7-P8.70-D0.9-RD",
+          "D1_5V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C232466",
+            "BOM_Manufacturer": "ON Semicon",
+            "BOM_Manufacturer Part": "1N5921BG",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c2803222ad4b48fb94db0de548a6280a",
+            "uuid": "7cf0742ede124deabc1a17d9cb305ad1"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x1",
+          6,
+          "HDR-M-2.54_1X1",
+          "J1_RESET,J2_GND,J3_5V,J4_OFFCONTROL_SCK,J5_OFFSIGNAL_MISO,J6_OFFBTN_MOSI",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "button6*6*8.5",
+          1,
+          "KEY-TH_4P-L6.0-W6.0-P4.50",
+          "KEY1",
+          {
+            "BOM_Supplier Part": "C59980",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ReliaPro",
+            "BOM_Manufacturer Part": "button6*6*8.5",
+            "puuid": "9096c4e6bc254754b0b895e85df2faca",
+            "uuid": "e8227dd34355fb317f612b5079bf676c"
+          }
+        ],
+        [
+          "6k",
+          1,
+          "R_AXIAL-0.4",
+          "R1",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "5905db98cde4487fbb177070aa85bbe1",
+            "uuid": "d1967012734640e5b2f2cc1ea764740b"
+          }
+        ],
+        [
+          "2k",
+          1,
+          "R_AXIAL-0.4",
+          "R2",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "5905db98cde4487fbb177070aa85bbe1",
+            "uuid": "d1967012734640e5b2f2cc1ea764740b"
+          }
+        ],
+        [
+          "ATTINY13-20PU",
+          1,
+          "DIP-8_L9.2-W6.4-P2.54-LS8.7-BL",
+          "U1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "MICROCHIP",
+            "BOM_Manufacturer Part": "ATTINY13-20PU",
+            "BOM_Supplier Part": "C145757",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "f06687f6b6924b4bb859660f62897498",
+            "uuid": "fa5a43f7921d4de096cb24262ae6b0f5"
+          }
+        ],
+        [
+          "one_reley_module",
+          1,
+          "ONE_RELEY_MODULE",
+          "U2",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "8a758e74336f4df6a139a7624d16b975",
+            "uuid": "cb156ac9ee5546299534d4ab38132622"
+          }
+        ],
+        [
+          "7805(TO-220)",
+          1,
+          "TO-220-3_L10.0-W4.5-P2.54-L",
+          "U3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "STMicroelectronics",
+            "BOM_Manufacturer Part": "L7805CV-DG",
+            "BOM_Supplier Part": "C3795",
+            "puuid": "948e610cffd14df79f04c73832b1409b",
+            "uuid": "3e5f9305e4ff42e585f4a630aaa490d5"
+          }
+        ],
+        [
+          "10nF",
+          1,
+          "CAP-TH_L4.2-W3.8-P5.08-D0.6",
+          "C6",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ReliaPro",
+            "BOM_Manufacturer Part": "CT4-0805Y103 M500",
+            "BOM_Supplier Part": "C3766",
+            "puuid": "516c8d718eb141208015ddba8bba510e",
+            "uuid": "7526c7323d3927fc0329972328edfeb0"
+          }
+        ],
+        [
+          "REL_PWR",
+          1,
+          "HDR-F-2.54_1X2",
+          "H1",
+          {
+            "BOM_Supplier Part": "C49661",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "36b1306a115341f4b4d9407fb34974e0",
+            "uuid": "3ec77201bbcd4ecd8722658d581a4e60"
+          }
+        ],
+        [
+          "UART",
+          1,
+          "HDR-M-2.54_1X3",
+          "J1",
+          {
+            "BOM_Supplier Part": "C180248",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "9f77654394344f25b3de138e0fe05ff6",
+            "uuid": "a68dc5e6a9944c46b7604648a43dcd65"
+          }
+        ],
+        [
+          "VCC",
+          1,
+          "HDR-M-2.54_1X2",
+          "J2",
+          {
+            "BOM_Supplier Part": "C124375",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "70aa5812f21f4991bf427395d51849f4",
+            "uuid": "a9aa2b14f188405792fa87ac344499a4"
+          }
+        ],
+        [
+          "GND",
+          1,
+          "HDR-M-2.54_1X2",
+          "J3",
+          {
+            "BOM_Supplier Part": "C124375",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "70aa5812f21f4991bf427395d51849f4",
+            "uuid": "a9aa2b14f188405792fa87ac344499a4"
+          }
+        ],
+        [
+          "SPI",
+          1,
+          "HDR-M-2.54_1X3",
+          "J4",
+          {
+            "BOM_Supplier Part": "C180248",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "9f77654394344f25b3de138e0fe05ff6",
+            "uuid": "a68dc5e6a9944c46b7604648a43dcd65"
+          }
+        ],
+        [
+          "OFFCONTROL",
+          1,
+          "HDR-M-2.54_1X1",
+          "J5",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "OFFSIGNAL",
+          1,
+          "HDR-M-2.54_1X1",
+          "J6",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "REL_OUT",
+          1,
+          "HDR-M-2.54_1X1",
+          "J7",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "BTN_IN",
+          1,
+          "HDR-M-2.54_1X1",
+          "J8",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "REL_IN",
+          1,
+          "HDR-M-2.54_1X1",
+          "J9",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "BTN_OUT",
+          1,
+          "HDR-M-2.54_1X1",
+          "J10",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "button6*6*8.5",
+          1,
+          "KEY-TH_4P-L6.0-W6.0-P4.50",
+          "KEY2",
+          {
+            "BOM_Supplier Part": "C59980",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ReliaPro",
+            "BOM_Manufacturer Part": "button6*6*8.5",
+            "puuid": "9096c4e6bc254754b0b895e85df2faca",
+            "uuid": "e8227dd34355fb317f612b5079bf676c"
+          }
+        ],
+        [
+          "PWR",
+          1,
+          "CONN-TH_2P-P5.00",
+          "P1",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "be1b3456245c4373bfecde52b7e1b1d6",
+            "uuid": "8cb0931e7aee4571ab281a4f2e7b6e80"
+          }
+        ],
+        [
+          "ATTINY2313V-10PU",
+          1,
+          "PDIP-20_L25.9-W6.6-P2.54-LS7.9-BL",
+          "U5",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C613485",
+            "BOM_Manufacturer": "MICROCHIP(美国微芯)",
+            "BOM_Manufacturer Part": "ATTINY2313V-10PU",
+            "puuid": "dbf8bf2c4285421f9f2eb915163d57a0",
+            "uuid": "2e426d3b71d34dfa96f78b5870d07ac9"
+          }
+        ],
+        [
+          "one_reley_module",
+          1,
+          "ONE_RELEY_MODULE",
+          "U6",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "8a758e74336f4df6a139a7624d16b975",
+            "uuid": "cb156ac9ee5546299534d4ab38132622"
+          }
+        ]
+      ],
+      "updateTime": 1647776684,
+      "createTime": 1647775125,
+      "histories": [],
+      "created_at": "2022-03-20 14:18:45",
+      "updated_at": "2022-03-20 14:44:44"
+    },
+    {
+      "uuid": "dd901a08f10f64706c2aa6c697ed4488",
+      "puuid": "070c4c6c3e40ddbd92a8c2ffe3d0bfae",
+      "title": "powerpsb",
+      "filename": "powerpsb.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {},
+      "BOM": [],
+      "updateTime": 1647427666,
+      "createTime": 1647427666,
+      "histories": [],
+      "created_at": "2022-03-16 13:47:46",
+      "updated_at": "2022-03-16 13:47:46"
+    },
+    {
+      "uuid": "6c111cf97d5e101d8758ef0d03a5ba27",
+      "puuid": "070c4c6c3e40ddbd92a8c2ffe3d0bfae",
+      "title": "PCB_serverpowersuply",
+      "filename": "PCB_serverpowersuply.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "516c8d718eb141208015ddba8bba510e": 1,
+        "1a9b494b74c34d3b879eb7f824b3824d": 2,
+        "c2803222ad4b48fb94db0de548a6280a": 1,
+        "19c77e72422b43b59c26b9fa67af5de4": 6,
+        "9096c4e6bc254754b0b895e85df2faca": 1,
+        "5905db98cde4487fbb177070aa85bbe1": 2,
+        "f06687f6b6924b4bb859660f62897498": 1,
+        "8a758e74336f4df6a139a7624d16b975": 1,
+        "948e610cffd14df79f04c73832b1409b": 1
+      },
+      "BOM": [],
+      "updateTime": 1647434077,
+      "createTime": 1647433996,
+      "histories": [],
+      "created_at": "2022-03-16 15:33:16",
+      "updated_at": "2022-03-16 15:34:37"
+    },
+    {
+      "uuid": "3bfa0c596af3cf52efc9c8e64af161bd",
+      "puuid": "070c4c6c3e40ddbd92a8c2ffe3d0bfae",
+      "title": "PCB_serverpowersuply_2",
+      "filename": "PCB_serverpowersuply_2.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "36b1306a115341f4b4d9407fb34974e0": 1,
+        "9f77654394344f25b3de138e0fe05ff6": 2,
+        "19c77e72422b43b59c26b9fa67af5de4": 5,
+        "70aa5812f21f4991bf427395d51849f4": 2,
+        "9096c4e6bc254754b0b895e85df2faca": 1,
+        "be1b3456245c4373bfecde52b7e1b1d6": 1,
+        "8a758e74336f4df6a139a7624d16b975": 1,
+        "dbf8bf2c4285421f9f2eb915163d57a0": 1
+      },
+      "BOM": [],
+      "updateTime": 1647778706,
+      "createTime": 1647778706,
+      "histories": [],
+      "created_at": "2022-03-20 15:18:26",
+      "updated_at": "2022-03-20 15:18:26"
+    }
+  ],
+  "sort": [
+    "5bfcc46f2160e246ee4cc7f78ccc2fe2",
+    "9b03b482d88dd465a61fec465817b4c8"
+  ],
+  "title": "serverpowersuply",
+  "foldername": "serverpowersuply",
+  "schfilename": "serverpowersuply.json",
+  "schfilemtime": 1647776684364
+}
