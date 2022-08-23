@@ -1,0 +1,488 @@
+
+C:\Users\misha\AppData\Local\Temp\arduino_build_786221/PwrModuleOrangePiZero2.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+   0:	09 c0       	rjmp	.+18     	; 0x14 <__ctors_end>
+   2:	16 c0       	rjmp	.+44     	; 0x30 <__bad_interrupt>
+   4:	15 c0       	rjmp	.+42     	; 0x30 <__bad_interrupt>
+   6:	14 c0       	rjmp	.+40     	; 0x30 <__bad_interrupt>
+   8:	13 c0       	rjmp	.+38     	; 0x30 <__bad_interrupt>
+   a:	12 c0       	rjmp	.+36     	; 0x30 <__bad_interrupt>
+   c:	11 c0       	rjmp	.+34     	; 0x30 <__bad_interrupt>
+   e:	10 c0       	rjmp	.+32     	; 0x30 <__bad_interrupt>
+  10:	0f c0       	rjmp	.+30     	; 0x30 <__bad_interrupt>
+  12:	0e c0       	rjmp	.+28     	; 0x30 <__bad_interrupt>
+
+00000014 <__ctors_end>:
+__trampolines_start():
+  14:	11 24       	eor	r1, r1
+  16:	1f be       	out	0x3f, r1	; 63
+  18:	cf e9       	ldi	r28, 0x9F	; 159
+  1a:	cd bf       	out	0x3d, r28	; 61
+
+0000001c <__do_clear_bss>:
+__do_clear_bss():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  1c:	20 e0       	ldi	r18, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  1e:	a0 e6       	ldi	r26, 0x60	; 96
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  20:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  22:	01 c0       	rjmp	.+2      	; 0x26 <.do_clear_bss_start>
+
+00000024 <.do_clear_bss_loop>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  24:	1d 92       	st	X+, r1
+
+00000026 <.do_clear_bss_start>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  26:	a3 36       	cpi	r26, 0x63	; 99
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  28:	b2 07       	cpc	r27, r18
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  2a:	e1 f7       	brne	.-8      	; 0x24 <.do_clear_bss_loop>
+.do_clear_bss_start():
+  2c:	12 d0       	rcall	.+36     	; 0x52 <main>
+  2e:	75 c0       	rjmp	.+234    	; 0x11a <_exit>
+
+00000030 <__bad_interrupt>:
+__vector_1():
+  30:	e7 cf       	rjmp	.-50     	; 0x0 <__vectors>
+
+00000032 <_analogRead>:
+_analogRead():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/wiring_analog.c:77
+  (void)pin; // Silence warning about pin not being used
+  return 0;
+#else
+  #if defined(REFS0)
+  #if defined(ADMUX)
+  ADMUX = ((analog_reference & ADMUX_REFS_MASK) << REFS0) | ((pin & ADMUX_MUX_MASK) << MUX0); //select the channel and reference
+  32:	87 b9       	out	0x07, r24	; 7
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/wiring_analog.c:88
+    // Chips without any other reference than Vcc
+    ADMUX = pin;
+  #endif
+  
+  #if defined(HAVE_ADC) && HAVE_ADC
+  sbi(ADCSRA, ADSC); //Start conversion
+  34:	36 9a       	sbi	0x06, 6	; 6
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/wiring_analog.c:90
+
+  while(ADCSRA & (1<<ADSC)); //Wait for conversion to complete.
+  36:	36 99       	sbic	0x06, 6	; 6
+  38:	fe cf       	rjmp	.-4      	; 0x36 <_analogRead+0x4>
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/wiring_analog.c:92
+
+  uint8_t low = ADCL;
+  3a:	84 b1       	in	r24, 0x04	; 4
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/wiring_analog.c:94
+#if defined(ADCH)
+  uint8_t high = ADCH;
+  3c:	95 b1       	in	r25, 0x05	; 5
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/wiring_analog.c:105
+#endif
+  #else
+  return LOW;
+  #endif
+#endif
+}
+  3e:	08 95       	ret
+
+00000040 <delay>:
+delay():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/MillisMicrosDelay.c:3065
+
+
+
+#if ! ( defined( REDUCED_CORE_TINYAVR ) && REDUCED_CORE_TINYAVR )
+  // The 4/5/9/10 "Reduced Core" have problems with GCC compiling this    
+  __asm__ __volatile__ (
+  40:	26 e1       	ldi	r18, 0x16	; 22
+  42:	31 e0       	ldi	r19, 0x01	; 1
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/MillisMicrosDelay.c:2506
+}
+#endif
+
+void delay(DelayTime_t ms)
+{
+  while(ms--){
+  44:	01 97       	sbiw	r24, 0x01	; 1
+  46:	08 f4       	brcc	.+2      	; 0x4a <delay+0xa>
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/MillisMicrosDelay.c:2530
+  MillisMicrosTime_t current = millis();
+  while(millis() - current < ms);
+  return;
+#endif
+#endif
+}
+  48:	08 95       	ret
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/MillisMicrosDelay.c:3065
+
+
+
+#if ! ( defined( REDUCED_CORE_TINYAVR ) && REDUCED_CORE_TINYAVR )
+  // The 4/5/9/10 "Reduced Core" have problems with GCC compiling this    
+  __asm__ __volatile__ (
+  4a:	f9 01       	movw	r30, r18
+  4c:	31 97       	sbiw	r30, 0x01	; 1
+  4e:	f1 f7       	brne	.-4      	; 0x4c <delay+0xc>
+  50:	f9 cf       	rjmp	.-14     	; 0x44 <delay+0x4>
+
+00000052 <main>:
+main():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/wiring_lite.c:328
+      #define ADC_ARDUINO_PRESCALER 7
+    #endif
+    
+    // Since this is init(), ADCSRA is already going to be zero, we can just
+    // set our bits indiscriminantly
+    ADCSRA = (ADC_ARDUINO_PRESCALER << ADPS0) | _BV(ADEN);
+  52:	83 e8       	ldi	r24, 0x83	; 131
+  54:	86 b9       	out	0x06, r24	; 6
+pinMode():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:255
+      return;
+    }
+    #if OPTIMIZE_CONSTANT_PINMODE_INPUT
+    else if(mode == INPUT)
+    {
+      uint8_t oldSREG = SREG;
+  56:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:256
+      cli();
+  58:	f8 94       	cli
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:257
+      ((void)(*((volatile uint8_t *)portModeRegister(digitalPinToPort(pin)))   &= ~digitalPinToBitMask(pin)));
+  5a:	bb 98       	cbi	0x17, 3	; 23
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:258
+      ((void)(*((volatile uint8_t *)pullupEnableRegister(digitalPinToPort(pin))) &= ~digitalPinToBitMask(pin)));    
+  5c:	c3 98       	cbi	0x18, 3	; 24
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:259
+      SREG = oldSREG;
+  5e:	8f bf       	out	0x3f, r24	; 63
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:249
+      return;
+      // NOP
+    }
+    else if(mode == OUTPUT)
+    {
+      ((void)(*((volatile uint8_t *)portModeRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+  60:	bc 9a       	sbi	0x17, 4	; 23
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:255
+      return;
+    }
+    #if OPTIMIZE_CONSTANT_PINMODE_INPUT
+    else if(mode == INPUT)
+    {
+      uint8_t oldSREG = SREG;
+  62:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:256
+      cli();
+  64:	f8 94       	cli
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:257
+      ((void)(*((volatile uint8_t *)portModeRegister(digitalPinToPort(pin)))   &= ~digitalPinToBitMask(pin)));
+  66:	ba 98       	cbi	0x17, 2	; 23
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:258
+      ((void)(*((volatile uint8_t *)pullupEnableRegister(digitalPinToPort(pin))) &= ~digitalPinToBitMask(pin)));    
+  68:	c2 98       	cbi	0x18, 2	; 24
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:259
+      SREG = oldSREG;
+  6a:	8f bf       	out	0x3f, r24	; 63
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:249
+      return;
+      // NOP
+    }
+    else if(mode == OUTPUT)
+    {
+      ((void)(*((volatile uint8_t *)portModeRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+  6c:	b9 9a       	sbi	0x17, 1	; 23
+digitalWrite():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:327
+    
+    // If on a timer, turn it off (or fall through if we don't optimize that)
+    if(digitalPinToTimer(pin) != NOT_ON_TIMER )
+    {
+      #if OPTIMIZE_DIGITAL_WRITE_ON_TIMER
+        turnOffPWM(digitalPinToTimer(pin));
+  6e:	8f b5       	in	r24, 0x2f	; 47
+  70:	8f 7c       	andi	r24, 0xCF	; 207
+  72:	8f bd       	out	0x2f, r24	; 47
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:341
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+      return;
+    }
+    else // Can only be LOW here, no need to check
+    {
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) &= ~digitalPinToBitMask(pin)));
+  74:	c1 98       	cbi	0x18, 1	; 24
+pinMode():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:255
+      return;
+    }
+    #if OPTIMIZE_CONSTANT_PINMODE_INPUT
+    else if(mode == INPUT)
+    {
+      uint8_t oldSREG = SREG;
+  76:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:256
+      cli();
+  78:	f8 94       	cli
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:257
+      ((void)(*((volatile uint8_t *)portModeRegister(digitalPinToPort(pin)))   &= ~digitalPinToBitMask(pin)));
+  7a:	b8 98       	cbi	0x17, 0	; 23
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:258
+      ((void)(*((volatile uint8_t *)pullupEnableRegister(digitalPinToPort(pin))) &= ~digitalPinToBitMask(pin)));    
+  7c:	c0 98       	cbi	0x18, 0	; 24
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:259
+      SREG = oldSREG;
+  7e:	8f bf       	out	0x3f, r24	; 63
+digitalWrite():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:327
+    
+    // If on a timer, turn it off (or fall through if we don't optimize that)
+    if(digitalPinToTimer(pin) != NOT_ON_TIMER )
+    {
+      #if OPTIMIZE_DIGITAL_WRITE_ON_TIMER
+        turnOffPWM(digitalPinToTimer(pin));
+  80:	8f b5       	in	r24, 0x2f	; 47
+  82:	8f 73       	andi	r24, 0x3F	; 63
+  84:	8f bd       	out	0x2f, r24	; 47
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:336
+      #endif
+    }
+
+    if(val == HIGH)
+    {
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+  86:	c0 9a       	sbi	0x18, 0	; 24
+setup():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:25
+  pinMode(OFFSIGNALPIN, OUTPUT);
+  digitalWrite(OFFSIGNALPIN, LOW); //команда выключения платы не дается
+  pinMode(BTNPIN, INPUT);
+  digitalWrite(BTNPIN, HIGH); //подтягиваюзий резистор кнопки
+
+  while (voltage < MINVOLTAGE || voltage > MAXVOLTAGE) { //контроль входного напряжения
+  88:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  8c:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  90:	83 53       	subi	r24, 0x33	; 51
+  92:	91 40       	sbci	r25, 0x01	; 1
+  94:	85 34       	cpi	r24, 0x45	; 69
+  96:	91 05       	cpc	r25, r1
+  98:	68 f4       	brcc	.+26     	; 0xb4 <__stack+0x15>
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:39
+    while (analogRead(BTNPIN) == LOW) {
+      delay(100);
+    }
+    if (pwr_enabled == false) { //полностью включаемся
+      digitalWrite(RELEYPIN, HIGH);
+      pwr_enabled = true;
+  9a:	c1 e0       	ldi	r28, 0x01	; 1
+analogRead():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:442
+  
+  #if !defined(ADCSRA) || NUM_ANALOG_INPUTS < 1
+  return digitalRead(analogInputToDigitalPin(pin)) ? 1023 : 0; //No ADC, so read as a digital pin instead.
+  #endif
+  
+  return _analogRead(pin);
+  9c:	80 e0       	ldi	r24, 0x00	; 0
+  9e:	c9 df       	rcall	.-110    	; 0x32 <_analogRead>
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:33
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (analogRead(BTNPIN) == LOW) { //нажали и откустили кнопку
+  a0:	89 2b       	or	r24, r25
+  a2:	c9 f4       	brne	.+50     	; 0xd6 <__stack+0x37>
+analogRead():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:442
+  a4:	80 e0       	ldi	r24, 0x00	; 0
+  a6:	c5 df       	rcall	.-118    	; 0x32 <_analogRead>
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:34
+    while (analogRead(BTNPIN) == LOW) {
+  a8:	89 2b       	or	r24, r25
+  aa:	71 f4       	brne	.+28     	; 0xc8 <__stack+0x29>
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:35
+      delay(100);
+  ac:	84 e6       	ldi	r24, 0x64	; 100
+  ae:	90 e0       	ldi	r25, 0x00	; 0
+  b0:	c7 df       	rcall	.-114    	; 0x40 <delay>
+  b2:	f8 cf       	rjmp	.-16     	; 0xa4 <__stack+0x5>
+setup():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:26
+  digitalWrite(OFFSIGNALPIN, LOW); //команда выключения платы не дается
+  pinMode(BTNPIN, INPUT);
+  digitalWrite(BTNPIN, HIGH); //подтягиваюзий резистор кнопки
+
+  while (voltage < MINVOLTAGE || voltage > MAXVOLTAGE) { //контроль входного напряжения
+    delay(500);
+  b4:	84 ef       	ldi	r24, 0xF4	; 244
+  b6:	91 e0       	ldi	r25, 0x01	; 1
+  b8:	c3 df       	rcall	.-122    	; 0x40 <delay>
+analogRead():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:442
+  ba:	83 e0       	ldi	r24, 0x03	; 3
+  bc:	ba df       	rcall	.-140    	; 0x32 <_analogRead>
+setup():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:27
+    voltage = analogRead(VOLTAGEPIN);
+  be:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  c2:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+  c6:	e0 cf       	rjmp	.-64     	; 0x88 <main+0x36>
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:37
+  // put your main code here, to run repeatedly:
+  if (analogRead(BTNPIN) == LOW) { //нажали и откустили кнопку
+    while (analogRead(BTNPIN) == LOW) {
+      delay(100);
+    }
+    if (pwr_enabled == false) { //полностью включаемся
+  c8:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <pwr_enabled>
+  cc:	81 11       	cpse	r24, r1
+  ce:	13 c0       	rjmp	.+38     	; 0xf6 <__stack+0x57>
+digitalWrite():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:336
+      #endif
+    }
+
+    if(val == HIGH)
+    {
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+  d0:	c4 9a       	sbi	0x18, 4	; 24
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:39
+      digitalWrite(RELEYPIN, HIGH);
+      pwr_enabled = true;
+  d2:	c0 93 62 00 	sts	0x0062, r28	; 0x800062 <pwr_enabled>
+digitalRead():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:414
+      #else
+        return _digitalRead(pin);        
+      #endif
+    }
+
+    return (*((volatile uint8_t *)portInputRegister(digitalPinToPort(pin))) & digitalPinToBitMask(pin)) ? HIGH : LOW;
+  d6:	86 b3       	in	r24, 0x16	; 22
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:59
+    }
+  }
+
+  board_enabled = bool(digitalRead(OFFCONTROLPIN)); //проверяем плату
+
+  if (pwr_enabled == true && board_enabled == false) { //если выключилась плата, ждем, перепроверяем и выключаем питание
+  d8:	90 91 62 00 	lds	r25, 0x0062	; 0x800062 <pwr_enabled>
+  dc:	99 23       	and	r25, r25
+  de:	f1 f2       	breq	.-68     	; 0x9c <main+0x4a>
+  e0:	82 fd       	sbrc	r24, 2
+  e2:	dc cf       	rjmp	.-72     	; 0x9c <main+0x4a>
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:60
+    delay(CHECKTIME);
+  e4:	80 ec       	ldi	r24, 0xC0	; 192
+  e6:	94 ed       	ldi	r25, 0xD4	; 212
+  e8:	ab df       	rcall	.-170    	; 0x40 <delay>
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:61
+    if (digitalRead(OFFCONTROLPIN) == LOW) {
+  ea:	b2 99       	sbic	0x16, 2	; 22
+  ec:	d7 cf       	rjmp	.-82     	; 0x9c <main+0x4a>
+digitalWrite():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:341
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+      return;
+    }
+    else // Can only be LOW here, no need to check
+    {
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) &= ~digitalPinToBitMask(pin)));
+  ee:	c4 98       	cbi	0x18, 4	; 24
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:63
+      digitalWrite(RELEYPIN, LOW);
+      pwr_enabled = false;
+  f0:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <pwr_enabled>
+  f4:	d3 cf       	rjmp	.-90     	; 0x9c <main+0x4a>
+digitalWrite():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:327
+    
+    // If on a timer, turn it off (or fall through if we don't optimize that)
+    if(digitalPinToTimer(pin) != NOT_ON_TIMER )
+    {
+      #if OPTIMIZE_DIGITAL_WRITE_ON_TIMER
+        turnOffPWM(digitalPinToTimer(pin));
+  f6:	8f b5       	in	r24, 0x2f	; 47
+  f8:	8f 7c       	andi	r24, 0xCF	; 207
+  fa:	8f bd       	out	0x2f, r24	; 47
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:336
+      #endif
+    }
+
+    if(val == HIGH)
+    {
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+  fc:	c1 9a       	sbi	0x18, 1	; 24
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:47
+      }
+      board_enabled = true;
+    }
+    else { //полностью выключаемся
+      digitalWrite(OFFSIGNALPIN, HIGH);
+      while (digitalRead(OFFCONTROLPIN) == HIGH) {
+  fe:	b2 9b       	sbis	0x16, 2	; 22
+ 100:	04 c0       	rjmp	.+8      	; 0x10a <__stack+0x6b>
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:48
+        delay(100);
+ 102:	84 e6       	ldi	r24, 0x64	; 100
+ 104:	90 e0       	ldi	r25, 0x00	; 0
+ 106:	9c df       	rcall	.-200    	; 0x40 <delay>
+ 108:	fa cf       	rjmp	.-12     	; 0xfe <__stack+0x5f>
+digitalWrite():
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:327
+    
+    // If on a timer, turn it off (or fall through if we don't optimize that)
+    if(digitalPinToTimer(pin) != NOT_ON_TIMER )
+    {
+      #if OPTIMIZE_DIGITAL_WRITE_ON_TIMER
+        turnOffPWM(digitalPinToTimer(pin));
+ 10a:	8f b5       	in	r24, 0x2f	; 47
+ 10c:	8f 7c       	andi	r24, 0xCF	; 207
+ 10e:	8f bd       	out	0x2f, r24	; 47
+C:\Users\misha\AppData\Local\Arduino15\packages\diy_attiny\hardware\avr\2022.3.10-gcc7.3\cores\tiny/Arduino.h:341
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) |= digitalPinToBitMask(pin)));
+      return;
+    }
+    else // Can only be LOW here, no need to check
+    {
+      ((void)(*((volatile uint8_t *)portOutputRegister(digitalPinToPort(pin))) &= ~digitalPinToBitMask(pin)));
+ 110:	c1 98       	cbi	0x18, 1	; 24
+ 112:	c4 98       	cbi	0x18, 4	; 24
+loop():
+D:\code_electr\arduino\PwrModuleOrangePiZero2/PwrModuleOrangePiZero2.ino:53
+      }
+      board_enabled = false;
+      digitalWrite(OFFSIGNALPIN, LOW);
+      digitalWrite(RELEYPIN, LOW);
+      pwr_enabled = false;
+ 114:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <pwr_enabled>
+ 118:	de cf       	rjmp	.-68     	; 0xd6 <__stack+0x37>
+
+0000011a <_exit>:
+exit():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ 11a:	f8 94       	cli
+
+0000011c <__stop_program>:
+__stop_program():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/tiny-stack/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ 11c:	ff cf       	rjmp	.-2      	; 0x11c <__stop_program>
